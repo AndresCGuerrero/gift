@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="https://img.icons8.com/doodle/48/hearts--v1.png" />
+    <title>Gracias ☀️</title>
+    <title>Para la Chiquita ❤️</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="theme-color" content="rgb(22, 46, 97)" />
+    <link rel="stylesheet" href="./other-side-sty.css" />
+    <style>
+      /* ******Resets****** */
+
+html {
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+  scroll-behavior: smooth;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+ul,
+li {
+  margin: 0;
+}
+
+aside {
+  margin: 0;
+  padding: 0;
+}
+
+/* ******Utilities****** */
+
+main {
+  flex-grow: 1;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.utility-1 {
+  padding: 1rem;
+  background-image: url(./assets/benjamin-voros-phIFdC6lA4E-unsplash-1.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  /*   background-position: 10% 30%; */
+  color: #eee;
+}
+
+/* ******Site styles****** */
+
+.cards {
+  margin: 0;
+  padding: 0;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.card img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.mjs {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  background-color: #fff;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.card:hover .mjs {
+  opacity: 0.75;
+}
+
+.mjs > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  border: medium solid #447aa8;
+  text-align: center;
+  font-size: 2rem;
+  color: #447aa8;
+}
+
+.content-container {
+  margin: 1rem;
+}
+
+footer {
+  text-align: center;
+  background-image: url(./assets/benjamin-voros-phIFdC6lA4E-unsplash-1.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 10% 30%;
+  color: #eee;
+  padding: 0.5rem;
+}
+
+.footer-text {
+  text-shadow: 4px 3px 6px rgba(0, 0, 0, 0.75);
+  font-size: 1.1rem;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  text-align: center;
+  z-index: 999;
+}
+
+.hero-image {
+  min-height: 100vh;
+  background-image: url(./assets/IMG-20221031-WA0198.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.hero-image div {
+  min-height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.55);
+  text-align: center;
+}
+
+.hero-image h2 {
+  color: #fff;
+  font-size: 5.5vw;
+}
+
+.item-container {
+  padding: 1.5rem;
+}
+
+.item-container p {
+  margin-top: 1rem;
+}
+
+.icons-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0 0 0;
+  text-align: center;
+  font-size: 1.7rem;
+}
+
+.logo a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.logo h2 {
+  margin-left: 1rem;
+}
+
+/* .menu {
+  display: none;
+} */
+
+.menu ul {
+  list-style-type: none;
+  width: 100%;
+  display: flex;
+}
+
+.menu li {
+  padding: 0.3rem 0.5rem;
+  font-weight: bold;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.menu a:hover {
+  color: #888;
+}
+
+.mosaic-grid {
+  position: relative;
+}
+
+.poem {
+  text-align: left;
+  font-size: 1.5rem;
+}
+
+.proposal {
+  width: 100%;
+  margin: 1rem auto;
+  background-image: linear-gradient(
+    rgb(13, 37, 84),
+    rgb(22, 46, 97),
+    rgb(50, 90, 170)
+  );
+  border-radius: 5px;
+}
+
+.proposal-text {
+  padding: 2rem;
+  text-align: center;
+  color: #fff;
+}
+
+/* ******Media Queries****** */
+
+@media screen and (min-width: 1024px) {
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+
+  .card img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .content-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 2rem auto;
+  }
+
+  .header {
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    text-align: initial;
+  }
+
+  .item-container {
+    flex: 0 1 50%;
+    padding: 1rem;
+  }
+
+  .item img {
+    width: 410px;
+    height: 450px;
+  }
+
+  .item-2 img {
+    margin-top: 1rem;
+    width: 400px;
+    height: 400px;
+  }
+
+  .icons-content {
+    margin: 1rem 0 0 0;
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  .logo:hover {
+    transform: scale(1.1);
+  }
+
+  main {
+    padding: 1rem;
+  }
+
+  .menu {
+    display: initial;
+  }
+
+  .menu ul {
+    display: flex;
+    align-items: center;
+  }
+
+  .menu li {
+    margin: 0 0.5rem;
+  }
+
+  .mosaic-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    padding: 0.5rem;
+  }
+
+  .order-1 {
+    order: 1;
+  }
+}
+
+    </style>
+  </head>
+  <body>
+    <header class="utility-1 header">
+      <div class="logo">
+        <h2><a href="index.html">Te adoro🌼</a></h2>
+      </div>
+      <nav class="menu">
+        <ul>
+          <li><a href="#home">Inicio</a></li>
+          <li><a href="#about">Nosotros</a></li>
+          <li><a href="#astory">Un cuento</a></li>
+          <li><a href="#mosaic">Galería</a></li>
+        </ul>
+      </nav>
+    </header>
+    <article class="hero-image" id="home">
+      <div>
+        <h2>Para la chiquita <br />más hermosa❤️</h2>
+      </div>
+    </article>
+    <div class="container">
+      <main>
+        <section>
+          <section class="content-container">
+            <article class="item-container" id="about">
+              <h2>Nosotros</h2>
+              <p>
+                Nuesta historia comenzó de una manera que yo llamaría extraña.
+                En cierto punto, creí que jamás se daría, que a lo mejor,
+                seríamos amigos nada más... y realmente no me equivoqué, somos
+                buenos amigos, pero no pude evitar enamorarme de ti.
+              </p>
+              <p>
+                Al principio, fue raro, lleno de muchos tropiezos y caídas,
+                momentos en los que parecía imposible, pero verte, tenerte,
+                besarte y sentir tu amor era motivante, tu apoyo, la paciencia y
+                la resiliencia que tuviste conmigo, jugaron un gran papel y por
+                eso, te agradezco.
+              </p>
+              <p>
+                Finalmente, ha pasado un año y yo solo puedo decirte que estoy
+                feliz, que te amo, que incluso con los malos momentos, estoy
+                agradecido de que estés aquí, que me ames, que estés enamorada
+                de mi y seas mi chiquita.
+              </p>
+              <div class="icons-content">🌅🌅🌅🌅🌅🌅🌅🌅🌅</div>
+            </article>
+            <article class="item">
+              <img src="./assets/IMG-20230101-WA0121.jpg" alt="" />
+            </article>
+          </section>
+          <section class="content-container" id="astory">
+            <article class="item-container order-1">
+              <h2>Una camelada</h2>
+              <p>
+                Érase una vez, un alma que vagaba por la tierra sin un propósito
+                en particular, su memorias eran brrosas y hasta cierto punto,
+                estaba muerto en vida.
+              </p>
+              <p>
+                Un día, un alma más vieja le contó la historia de Camel, un
+                camello cuya vida había sido similar a la suya al principio pero
+                que un día se hartó de esa y decidió emprender rumbo, sin un
+                destino claro, pero con una meta ímplicita, vivir. Le costó,
+                fueron años duros, difíciles y con mucho sacrificio, no obtuvo
+                nada particularmente bueno, pero aprendió mucho. Fue entonces
+                cuando decidió cambiar el rumbo otra vez y buscar alguien que lo
+                acompañase en el camino, y así fue, encontró amor y una familia,
+                encontró una camelada.
+              </p>
+              <p>
+                Aunque escéptico al principio, aquella alma decidió seguir los
+                pasos de Camel, y ha sido duro, aun se pierde mucho en su rumbo,
+                pero no se ha rendido y en el camino, encontró un alma de
+                apariencia chiquita, pero grande y hermosa como cielo, quizá no
+                es la misma historia de Camel, pero seguro tendrá un final
+                feliz.
+              </p>
+            </article>
+            <article class="item-2">
+              <img src="./assets/IMG-20221207-WA0072.jpg" alt="" />
+            </article>
+          </section>
+        </section>
+        <section class="proposal">
+          <article class="proposal-text">
+            <h2>¿Quieres tener una camelada conmigo?</h2>
+          </article>
+        </section>
+        <section class="cards" id="mosaic">
+            <div class="card">
+              <img src="./assets/mjs-assets/IMG-20221031-WA0161.jpg" alt="" />
+              <aside class="mjs">
+                <div>
+                  <h3>Te amo</h3>
+                  <p>Tu sonrisa desde la primera vez fue lo que más me cautivó.</p>
+                </div>
+              </aside>
+            </div>
+            <div class="card">
+              <img src="./assets/mjs-assets/IMG-20221031-WA0215.jpg" alt="" />
+              <aside class="mjs">
+                <div>
+                <h3>Me encantas</h3>
+                <p>
+                  Que estés en mi vida es un regalo.
+                </p>
+              </div>
+            </aside>
+            </div>
+            <div class="card">
+              <img src="./assets/mjs-assets/IMG-20230101-WA0086.jpg" alt="" />
+              <aside class="mjs">
+                <div>
+                  <h3>Eres increíble</h3>
+                  <p>
+                    Deseo pasar el mayor tiempo posible de mi vida a tu lado.
+                  </p>
+                </div>
+              </aside>
+            </div>
+            <div class="card">
+              <img src="./assets/mjs-assets/IMG-20230101-WA0094.jpg" alt="" />
+              <aside class="mjs">
+                <div>
+                  <h3>Me inspiras</h3>
+                  <p>
+                    Eres inteligente, hermosa, resiliente y echada para adelante, eres genial.
+                  </p>
+                </div>
+              </asid>
+            </div>
+            <div class="card">
+              <img src="./assets/mjs-assets/IMG-20230101-WA0133.jpg" alt="" />
+              <aside class="mjs">
+                <div>
+                  <h3>Me gustas</h3>
+                  <p>
+                    Quiero poder ayudarte a cumplir tus metas y tus sueños.
+                  </p>
+                </div>
+              </aside>
+            </div>
+            <div class="card">
+              <img src="./assets/mjs-assets/IMG-20230101-WA0139.jpg" alt="" />
+              <aside class="mjs">
+                <div>
+                  <h3>
+                    Te deseo
+                  </h3>
+                  <p>
+                    Eres el amor hecho persona, mi felicidad eres tú.
+                  </p>
+                </div>
+              </aside>
+            </div>
+            <div class="card">
+              <img src="./assets/mjs-assets/IMG-20230101-WA0159.jpg" alt="" />
+              <aside class="mjs">
+                <div>
+                  <h3>Te adoro</h3>
+                  <p>
+                    Los momentos contigo siempre son lindos, son unicos y están llenos de plenitud.
+                  </p>
+                </div>
+              </aside>
+            </div>
+            <div class="card">
+              <img src="./assets/mjs-assets/IMG-20230101-WA0163.jpg" alt="" />
+              <aside class="mjs">
+                <div>
+                  <h3>Te admiro</h3>
+                  <p>
+                    Se que lograrás todo lo que te propongas en tu vida, jamás te rindas, eres muy fuerte.
+                  </p>
+                </div>
+              </a>
+            </div>
+            <div class="card">
+              <img src="./assets/mjs-assets/IMG_20221228_195050.jpg" alt="" />
+              <aside class="mjs">
+                <div>
+                  <h3>Te quiero</h3>
+                  <p class="poem">
+                    As the night falls, my heart sighs, <br> thinking of your eyes, makes me watch the skies, <br>then I recall when I kiss you, with the brain stupefied.
+                  </p>
+                </div>
+              </aside>
+            </div>
+        </section>
+      </main>
+    </div>
+    <footer>
+      <h4 class="footer-text">❤️ Me haces feliz ❤️</h4>
+    </footer>
+  </body>
+</html>
